@@ -15,5 +15,8 @@ public class Ex02_Method_Call {
 		
 		result = fclass.opSum(-500);
 		System.out.println("return value : " + result);
+		
+		result = fclass.max(35, 34);
+		System.out.println("max return value : " + result);
 	}
 }

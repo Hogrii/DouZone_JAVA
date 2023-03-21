@@ -1,4 +1,7 @@
 package kr.or.kosa;
+
+import java.util.Scanner;
+
 /*
 기능(행위) 만드는 방법
 method를 만드는 방법(문법)
@@ -55,62 +58,72 @@ void getEmpListByEmpno();
  */
 public class Fclass {
 	public int data;
-	
+
 	// void m() >> 컴파일러가 default void m()으로 알아서 넣음
-	
+
 	// 함수의 접근자(수정자) 70%는 public
 	// 함수의 30%는 private
 	// 클래스 내부에서는 public, private가 의미가 없음
 	// 클래스 내부에서만 사용해라 >> 다른 함수를 도와주는 함수(공통 함수)
-	
+
 	public void m() { // void parameter (x)
 		// 기능 구현
 		System.out.println("일반함수 : void, parameter(x)");
 	}
-	
+
 	public void m2(int i) {
 		System.out.println("일반함수 : void, parameter(0)");
 		System.out.println("parameter 값을 활용 : " + i);
 	}
-	
+
 	public int m3() {
 		// 강제로 return 구현
 		return 10000;
 	}
-	
+
 	public int m4(int data) {
 		return 100 + data;
 	}
-	
+
 	// return type (o), parameter (o)
 	public int sum(int i, int j, int k) {
-		return i+j+k;
+		return i + j + k;
 	}
-	
+
 	// 함수의 접근자(수정자) 한정자
 	// int sum(); >> 컴파일러가 default int sum();
 	// private int sum() >> 객체 입장에서 접근 불가 >> 같은 클래스 내 접근 가능
 	// 클래스 내부에서 다른 함수를 도와주는 공통함수
-	
+
 	private int subSum(int i) {
 		return i + 100;
 	}
 	// Fclass fclass = new Fclass();
 	// fclass.보이지 않음
-	
+
 	public void callSubSum() {
 		int result = subSum(100); // private 함수
 		System.out.println("call result : " + result);
 	}
-	
+
 	public int opSum(int data) {
 		// 다양한 로직(제어문)
 		int result = subSum(data);
 		// 제어
-		if(result > 0) {
+		if (result > 0) {
 			return 1;
-		}else {
+		} else {
 			return -1;
 		}
+	}
+
+	// Quiz
+	/*
+	 * 함수 생성 정수타입 파라미터 2개를 받아 둘 중에 큰 값을 리턴하는 함수를 만드세요 ex) max(10, 5) return 10; //
+	 * 100, 90, 60
+	 */
+
+	public int max(int a, int b) {
+		return (a>=b) ? a : b;
 	}
 }
