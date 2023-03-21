@@ -102,4 +102,15 @@ public class Fclass {
 		int result = subSum(100); // private 함수
 		System.out.println("call result : " + result);
 	}
+	
+	public int opSum(int data) {
+		// 다양한 로직(제어문)
+		int result = subSum(data);
+		// 제어
+		if(result > 0) {
+			return 1;
+		}else {
+			return -1;
+		}
+	}
 }

@@ -12,5 +12,8 @@ public class Ex02_Method_Call {
 		
 		result = fclass.m4(10);
 		System.out.println("return value : " + result);
+		
+		result = fclass.opSum(-500);
+		System.out.println("return value : " + result);
 	}
 }
