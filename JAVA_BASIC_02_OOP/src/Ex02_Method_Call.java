@@ -18,5 +18,7 @@ public class Ex02_Method_Call {
 		
 		result = fclass.max(35, 34);
 		System.out.println("max return value : " + result);
+		
+		fclass.
 	}
 }
