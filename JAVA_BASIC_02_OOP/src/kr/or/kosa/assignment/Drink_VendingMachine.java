@@ -1,4 +1,4 @@
-package kor.or.kosa.assignment;
+package kr.or.kosa.assignment;
 
 public class Drink_VendingMachine {
 	// 고유 데이터
