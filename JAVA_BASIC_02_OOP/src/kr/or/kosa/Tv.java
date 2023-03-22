@@ -12,19 +12,16 @@ public class Tv {
 	public int channel;
 	public String brand;
 	
-	public int upChanel() {
-		return channel++;
+	public void channelUp() {
+		channel++;
 	}
 	
-	public int downChanel() {
-		return channel--;
+	public void channelDown() {
+		channel--;
 	}
 	
-	public void infoChanel() {
-		System.out.println(channel);
-	}
-	
-	public void infoBrand() {
-		System.out.println(brand);
+	public void tvInfo() {
+		System.out.print("브랜드 명 : " + brand + " , ");
+		System.out.println("현재 채널 : " + channel);
 	}
 }
