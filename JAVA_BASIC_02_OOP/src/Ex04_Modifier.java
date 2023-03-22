@@ -25,8 +25,5 @@ public class Ex04_Modifier {
 		
 		// 마우스 필요해? 연결 해줄게
 		mynote.handleMouse(mouse); // 마우스의 주소값을 전달
-		
-		///////////////////////////////////////////
-
 	}
 }
