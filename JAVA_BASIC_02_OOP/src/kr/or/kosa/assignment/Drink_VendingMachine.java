@@ -13,7 +13,16 @@ public class Drink_VendingMachine {
 	private String payState; // 결제 상태
 	
 	// 부품 데이터
-	public Drink drink; // 음료
+	public Drink drink = new Drink(); // 음료
 	public Money money; // 돈
 	public Pay pay; // 결제방식
+	
+	// 기능
+	public String onClickDrinkBtn() { // 음료 버튼이 눌렸을 때, 음료를 반환
+		return getDrink();		
+	}
+	
+	public String getDrink() {
+		return drink.getdrinkName();
+	}
 }

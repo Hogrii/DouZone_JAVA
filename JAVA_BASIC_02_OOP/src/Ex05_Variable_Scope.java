@@ -1,3 +1,4 @@
+import kr.or.kosa.AirPlane;
 
 /*
 instance variable >> class Car { private String color; }
@@ -93,5 +94,18 @@ public class Ex05_Variable_Scope {
 		VariableClass vc2 = new VariableClass();
 		System.out.println(vc.cv); // 200
 		vc2.cv = 400;
+		
+		//////////////////////////////////////////////
+		AirPlane airPlane = new AirPlane();
+		airPlane.setAirPlaneNameAndNum("대한항공", 101);
+		airPlane.getAirPlaneCnt();
+		
+		AirPlane airPlane2 = new AirPlane();
+		airPlane2.setAirPlaneNameAndNum("진에어", 102);
+		airPlane.getAirPlaneCnt();
+		
+		airPlane.getAirPlaneDisplay();		
+		airPlane2.getAirPlaneDisplay();
+
 	}
 }
