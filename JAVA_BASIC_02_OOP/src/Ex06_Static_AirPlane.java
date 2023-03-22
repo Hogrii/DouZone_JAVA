@@ -8,6 +8,7 @@ public class Ex06_Static_AirPlane {
 		AirPlane air2 = new AirPlane();
 		air2.setAirPlaneNameAndNum("아시아나", 102);
 		air2.getAirPlaneCnt();
+		
+		// AirPlane.airPlaneCnt -> static도 private이면 접근불가
 	}
-
 }

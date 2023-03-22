@@ -5,24 +5,28 @@ public class Drink_VendingMachine {
 	private boolean drinkBtn; // 음료 버튼
 	private boolean returnBtn; // 반환 버튼
 	private String color; // 자판기 색상
-	private String company;	// 자판기 제작회사
-	private int maxMoeny; // 자판기 소지 최대 금액
+	private String company;	// 자판기 제조회사
 
 	// 상태 데이터
-	private int currentMoney; // 자판기가 거슬러 줄 수 있는 금액
-	private String payState; // 결제 상태
+	private int inputMoney; // 사용자가 자판기에 넣은 금액
+	private boolean payState; // 결제 상태
 	
 	// 부품 데이터
 	public Drink drink = new Drink(); // 음료
-	public Money money; // 돈
-	public Pay pay; // 결제방식
 	
 	// 기능
-	public String onClickDrinkBtn() { // 음료 버튼이 눌렸을 때, 음료를 반환
-		return getDrink();		
+	public void onClickDrinkBtn() { // 음료 버튼이 눌렸을 때, 음료를 반환
+		isCardOrMoney(); // 카드인지 현금인지 판단
+		drink.existDrinkCnt();
 	}
 	
-	public String getDrink() {
-		return drink.getdrinkName();
+	public int onClickReturnBtn() { // 반환 버튼이 눌렸을 때, 잔액을 반환
+		return inputMoney;
+	}
+	
+	public void isCardOrMoney() {
+		if(!payState) { // true -> 카드 결제
+			inputMoney -= drink.getDrinkPrice(); // 현금 결제
+		}
 	}
 }
