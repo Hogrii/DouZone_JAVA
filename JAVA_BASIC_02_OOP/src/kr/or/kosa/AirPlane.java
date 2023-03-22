@@ -21,6 +21,7 @@ public class AirPlane {
 		this.airPlaneName = airPlaneName;
 		this.airPlaneNum = airPlaneNum;
 		airPlaneCnt++;
+		getAirPlaneDisplay();
 	}
 	
 	public void getAirPlaneDisplay() {
