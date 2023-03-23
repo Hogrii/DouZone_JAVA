@@ -64,7 +64,7 @@ public class Ex11_Method_Overloading {
 		overt.add(10, 10); // 파라미터에 대한 정의가 일치하는 메소드가 자동으로 호출
 //		overt.add(10.1f, 10); // 파라미터에 실수를 받는 값이 없기 때문에 에러 발생
 		overt.add("A");
-		
+
 		// 방법 1
 		Human human = new Human();
 		overt.add(human);
