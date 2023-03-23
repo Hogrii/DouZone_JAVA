@@ -12,6 +12,8 @@ package kr.or.kosa;
  air101.자원 = 대한항공
  air101.자원 = 707
  */
+
+/*
 public class AirPlane {
 	private String airPlaneName;
 	private int airPlaneNum = 0;
@@ -22,6 +24,31 @@ public class AirPlane {
 		this.airPlaneNum = airPlaneNum;
 		airPlaneCnt++;
 		getAirPlaneDisplay();
+	}
+	
+	public void getAirPlaneDisplay() {
+		System.out.println("비행기 번호 : " + airPlaneNum + ", 비행기 이름 : " + airPlaneName);
+	}
+	
+	public void getAirPlaneCnt() {
+		System.out.println("현재까지 만들어진 총 누적대수 : " + airPlaneCnt);
+	}
+}
+*/
+
+// 생성자 이후
+// 생성자를 사용해서 아래 코드를 수정
+public class AirPlane {
+	private int airPlaneNum = 0;
+	private String airPlaneName;	
+	static private int airPlaneCnt = 0;
+	
+	public AirPlane(int num, String name) {
+		airPlaneNum = num;
+		airPlaneName = name;
+		airPlaneCnt++;
+		// 생성자는 함수를 호출 할 수 없다
+//		getAirPlaneDisplay();
 	}
 	
 	public void getAirPlaneDisplay() {
