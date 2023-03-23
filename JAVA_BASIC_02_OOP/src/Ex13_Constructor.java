@@ -47,10 +47,67 @@ class School {
 	// 컴파일러가 자동으로 기본 생성자(default constructor)를 만들어서 실행한다
 }
 
+/////////////////////////////////////////////////////////////////////
+class Car2 {
+	String carname;
+	// 기본 생성자가 생략되어 있다
+	// public Car2() {}
+}
+
+class Car3 {
+	String carname; // null
+	public Car3() { // default constructor (method)
+		carname = "포니";
+	}
+}
+
+// Car4는 자동차를 만드는데 있어서 2가지 선택을 부여했다
+class Car4 {
+	String carname;
+	public Car4() { // default constructor
+		carname = "기본이름";
+	}
+	// overloading(함수) >> 생성자 함수(특수 목적) >> 생성자도 Overloading이 가능하다
+	public Car4(String name) {
+		carname = name;
+	}
+}
+
+// 설계 의도 >> 사용자에게 차 이름을 반드시 입력하게 강제성을 부여
+class Car5 {
+	String carname;
+	public Car5(String name) {
+		carname = name;
+	}
+}
+
+// 실생활 -> 떡볶이 주문, 자동차 구매, 커피샵 등등..
+class Car6 {
+	String carcolor;
+	int door;
+	public Car6(int num) {
+		carcolor = "blue";
+		door = num;
+	}
+	public Car6(String color) {
+		carcolor = color;
+		door = 4;
+	}
+	public Car6(int num, String color) {
+		carcolor = color;
+		door = num;
+	}
+}
+/////////////////////////////////////////////////////////////////////
+
 public class Ex13_Constructor {
 	public static void main(String[] args) {
 		Car car = new Car(); // 마지막 ()는 생성자의 파라미터
+		System.out.println(car.carname);
+		School school = new School(); // 기본 생성자를 호출하고 있음, new -> 생성자 함수
 		
-		School school = new School(); // 기본 생성자를 호출하고 있음
+		Car4 car4 = new Car4();
+		Car4 car41 = new Car4("홍길동카");
+		
 	}
 }
