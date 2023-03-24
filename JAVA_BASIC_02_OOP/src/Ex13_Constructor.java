@@ -85,6 +85,7 @@ class Car5 {
 class Car6 {
 	String carcolor;
 	int door;
+	public Car6() {}
 	public Car6(int num) {
 		carcolor = "blue";
 		door = num;
