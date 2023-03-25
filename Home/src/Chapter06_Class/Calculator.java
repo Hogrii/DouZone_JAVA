@@ -7,7 +7,7 @@ public class Calculator {
 	}
 	
 	// 리턴값이 없는 메소드
-	void powerOf() {
+	void powerOff() {
 		System.out.println("전원을 끕니다");
 	}
 	
@@ -23,5 +23,17 @@ public class Calculator {
 	double divide(int x, int y) {
 		double result = (double)x / (double)y;
 		return result;
+	}
+	
+	///////////////////////////////////////////////////
+	
+	// 정사각형의 넓이
+	double areaRectangle(double width) {
+		return width * width;
+	}
+	
+	// 직사각형의 넓이
+	double areaRectangle(double width, double height) {
+		return width * height;
 	}
 }

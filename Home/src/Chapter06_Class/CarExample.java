@@ -49,5 +49,24 @@ public class CarExample {
 		System.out.println("car4.model : " + car4.model);
 		System.out.println("car4.color : " + car4.color);
 		System.out.println("car4.maxSpeed : " + car4.maxSpeed);
+		System.out.println();
+		
+		///////////////////////////////////////////////////////////////
+		
+		// Car4 객체 생성
+		Car4 myCar2 = new Car4();
+		
+		// 리턴값이 없는 setGas() 메소드 호출
+		myCar2.setGas(5);
+		
+		// isLeftGas() 메소드를 호출해서 받은 리턴ㄴ값이 true일 경우 if 블록 실행
+		if(myCar2.isLeftGas()) {
+			System.out.println("출발합니다.");
+			
+			// 리턴값이 없는 run() 메소드 호출
+			myCar2.run();
+		}
+		
+		System.out.println("gas를 주입하세요.");
 	}
 }
