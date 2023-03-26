@@ -1,10 +1,11 @@
 
 public class Drink {
-	int apple;
-	int orange;
-	int grape;
-	int strawberry;
+	private int apple;
+	private int orange;
+	private int grape;
+	private int strawberry;
 	
+	// 음료 최대 개수
 	public Drink() {
 		this.apple = 2;
 		this.orange = 2;
@@ -12,10 +13,12 @@ public class Drink {
 		this.strawberry = 2;
 	}
 
+	// 음료 반환
 	public int getApple() {
 		return apple;
 	}
 	
+	// 음료 판매
 	public void soldApple() {
 		this.apple--;
 	}
