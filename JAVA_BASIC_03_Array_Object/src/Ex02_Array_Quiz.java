@@ -15,10 +15,12 @@ public class Ex02_Array_Quiz {
 		
 		// 풀이
 		for(int i=0; i<score.length; i++) {
-			if(score[i]>max) max = score[i];
-			if(score[i]<min) min = score[i];
+//			if(score[i]>max) max = score[i];
+//			if(score[i]<min) min = score[i];
 			
 			// 삼항연산자 사용 가능
+			max = (max>score[i]) ? max : score[i];
+			min = (min<score[i]) ? min : score[i];
 		}
 		System.out.println("max >> " + max + ", min >> " + min);
 		System.out.println();
