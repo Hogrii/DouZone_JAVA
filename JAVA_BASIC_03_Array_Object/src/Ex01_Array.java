@@ -61,5 +61,30 @@ public class Ex01_Array {
 		for(int i=0; i<arr2.length; i++) {
 			System.out.println(arr2[i]);
 		}
+		
+		// 배열은 객체다(new로 생성하고 heap에 올라간다)
+		int[] arr4; // stack에 변수만 생성(null) >> arr4는 메모리가 없다
+		arr4 = new int[] {21, 22, 23, 24, 25};
+		System.out.println(arr4); // [I@79b4d0f 주소값
+		
+		int[] arr5 = arr4; // 주소값 할당
+		// 같은 메모리를 보고 있다
+		System.out.println(arr5 == arr4); // true
+		
+		// 배열의 타입은 : 8가지 + String + 클래스(타입)
+		String[] strarr = new String[] {"가", "나", "다"};
+		for(int i=0; i<strarr.length; i++) {
+			System.out.println(strarr[i]);
+		}
+		
+		char[] carr = {'A', 'B'};
+		float[] farr = new float[3];
+		Car[] cararr = new Car[3]; // cararr[0] -> Car 타입의 주소값
+		// Car c = new Car();
+		// cararr[0] = c;
 	}
+}
+
+class Car { // 클래스 == 설계도 == 데이터 타입
+	
 }
