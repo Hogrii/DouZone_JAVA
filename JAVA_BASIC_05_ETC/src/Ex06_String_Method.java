@@ -1,3 +1,4 @@
+import java.util.StringTokenizer;
 
 public class Ex06_String_Method {
 	public static void main(String[] args) {
@@ -61,5 +62,49 @@ public class Ex06_String_Method {
 		for(String s : nameArr) {
 			System.out.println(s);
 		}
+		
+		// 정규표현식은 내일
+		
+		//
+		String str6 = "a/b,c-d.f";
+		StringTokenizer sto = new StringTokenizer(str6, "/,-.");
+		while(sto.hasMoreElements()) {
+			System.out.println(sto.nextToken());
+		}
+		
+		// 넌센스
+		String str7 = "홍     길     동";
+		// 저장 >> 공백을 제거 >> "홍길동"
+		System.out.println(str7.replace(" ", "")); // 홍길동
+		
+		String str8 = "     홍길동     ";
+		System.out.println(str8.trim()); // .trim() >> 양쪽 공백 제거, 가운데는 없음
+		
+		String str9 = "   홍   길   동   ";
+		
+		// 이렇게 하면 안된다
+//		String result5 = str9.trim();
+//		result5 = result5.replace(" ", "");
+		
+		// 메소드 체인을 이용해 사용한다
+		String result5 = str9.replace(" ", "").trim();
+		System.out.println(result5);
+		
+		// hint
+		int sum = 0;
+		String[] numarr = {"1", "2", "3", "4"};
+		for(String value : numarr) {
+			sum += Integer.parseInt(value);
+		}
+		System.out.println(sum);
+		
+		// Quiz
+		String jumin = "123456-1234567";
+		jumin = jumin.replace("-", "");
+		int sum2 = 0;
+		for(int i=0; i<jumin.length(); i++) {
+			sum2 += Integer.parseInt(jumin.substring(i, i+1));
+		}
+		System.out.println(sum2);
 	}
 }
