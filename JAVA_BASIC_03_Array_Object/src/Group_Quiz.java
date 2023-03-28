@@ -22,7 +22,7 @@ public class Group_Quiz {
 		}
 		
 		// 버블 정렬
-		for(int i=0; i<lotto.length; i++) {
+		for(int i=0; i<lotto.length-1; i++) {
 			for(int j=i+1; j<lotto.length; j++) {
 				if(lotto[i]>lotto[j]) {
 					tmp = lotto[i];

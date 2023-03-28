@@ -57,6 +57,7 @@ public class Ex01_Array {
 		int[] arr3 = {11, 22, 33}; // 컴파일러가 알아서 new를 처리
 		// Tip) javascript
 		// const arr = [10, 20, 30, 40, 50]; let arr = []; -> javascript 배열은 동적배열
+		//  -> javascript 배열은 stack 구조
 
 		for(int i=0; i<arr2.length; i++) {
 			System.out.println(arr2[i]);
