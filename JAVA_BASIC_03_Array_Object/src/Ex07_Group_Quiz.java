@@ -1,5 +1,5 @@
 
-public class Group_Quiz {
+public class Ex07_Group_Quiz {
 	public static void main(String[] args) {
 		/*﻿
 		1. 1~45 까지의 난수를 발생시켜서 6개의 정수값을 배열에 담으세요
