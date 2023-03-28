@@ -17,16 +17,7 @@ public class Ex08_Array_Rank {
 		score[2][0] = 500;
 		score[2][1] = 600;
 		
-		// 제어문 : 중첩 for문과 궁합이 좋다
-		/*
-		for(int i=0; i<3; i++) {
-			for(int j=0; j<2; j++) {
-				System.out.printf("score[%d][%d]=[%d]\t", i, j, score[i][j]);
-			}
-			System.out.println();
-		}
-		 */
-		
+		// 제어문 : 중첩 for문과 궁합이 좋다		
 		for(int i=0; i<score.length; i++) {
 			for(int j=0; j<score[i].length; j++) { // 다시 한 번 공부하기
 				System.out.printf("score[%d][%d]=[%d]\t", i, j, score[i][j]);
