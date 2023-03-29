@@ -30,10 +30,3 @@ public class CinemaInput {
 		return cancleMenu = sc.nextLine();
 	}
 }
-/*
-
-
-
-
-
-*/
