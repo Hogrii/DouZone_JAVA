@@ -47,7 +47,7 @@ public class Lotto {
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
 			} else {
-// 7 15 21 26 33 43 
+				
 			}
 		}
 	}
