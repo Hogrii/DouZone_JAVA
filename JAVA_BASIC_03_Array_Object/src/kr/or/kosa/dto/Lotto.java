@@ -38,6 +38,8 @@ public class Lotto {
 					lottoNumPrint(lotto);
 					lottos[i] = new Lotto(lotto);
 				}
+				int[] findMax = findMaxNum();
+				int maxNum = maxNum(findMax);
 			} else if (selectNum.equals("2")) { // 프로그램 종료
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
@@ -45,6 +47,27 @@ public class Lotto {
 
 			}
 		}
+	}
+	
+	private int maxNum(int[] findMax) {
+		int maxNum = 0;
+		for(int i=0; i<findMax.length; i++) {
+			if(maxNum<findMax[i]) maxNum = i;
+		}
+		System.out.println("제일 많이 나온 수 : " + maxNum + ", " + findMax[maxNum] + "번");
+		return maxNum;
+	}
+	
+	private int[] findMaxNum() {
+		int[] findMax = new int[46];
+		System.out.println("lottos 길이 : " + lottos.length);
+		System.out.println("lotto 길이 : " + lottos[0].lotto.length);
+		for(int i=0; i<lottos.length; i++) {
+			for(int j=0; j<lottos[i].lotto.length; j++) {
+				findMax[lottos[i].lotto[j]]++;
+			}
+		}
+		return findMax;
 	}
 	
 	private void lottoNumPrint(int[] lotto) {
