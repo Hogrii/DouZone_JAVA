@@ -24,6 +24,16 @@ public class Lotto {
 				}
 			}
 			
+			for(int i=0; i<lotto.length-1; i++) { // 버블 정렬
+				for(int j=i+1; j<lotto.length; j++) {
+					if(lotto[i]>lotto[j]) {
+						tmp = lotto[i];
+						lotto[i] = lotto[j];
+						lotto[j] = tmp;
+					}
+				}
+			}
+			
 			for(int i=0; i<lotto.length; i++) { // 로또 번호 확인
 				System.out.print(lotto[i] + " ");
 			}			
@@ -52,6 +62,5 @@ public class Lotto {
 	// 중복값 나오면 안되요
 	// 낮은 순으로 정렬해 주세요
 	// 화면에 출력해 주세요
-	// 메뉴 기능을 만들어 주세요
-	
+	// 메뉴 기능을 만들어 주세요	
 }
