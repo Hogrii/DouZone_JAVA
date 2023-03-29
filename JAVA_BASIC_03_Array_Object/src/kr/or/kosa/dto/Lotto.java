@@ -6,9 +6,15 @@ public class Lotto {
 
 	// 아래와 같이 ....
 	private Scanner sc;
+	private int[] lotto;
+	Lotto[] lottos = new Lotto[5];
 
 	public Lotto() {
 		sc = new Scanner(System.in);
+	}
+	
+	public Lotto(int[] lotto) {
+		this.lotto = lotto;
 	}
 
 	// 여러가지 기능을 가지는 함수를 생성 활용하세요
@@ -25,10 +31,13 @@ public class Lotto {
 		while (true) {
 			String selectNum = showMenu();
 			if (selectNum.equals("1")) { // 당첨 예상 번호 추출하기
-				int[] lotto = new int[6];
-				randomNum(lotto);
-				bubbleSort(lotto);
-				lottoNumPrint(lotto);
+				for(int i=0; i<lottos.length; i++) {
+					int[] lotto = new int[6];
+					randomNum(lotto);
+					bubbleSort(lotto);
+					lottoNumPrint(lotto);
+					lottos[i] = new Lotto(lotto);
+				}
 			} else if (selectNum.equals("2")) { // 프로그램 종료
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
@@ -58,7 +67,7 @@ public class Lotto {
 		}
 	}
 	
-	private void randomNum(int[] lotto) {
+	private void randomNum(int[] lotto) {		
 		for (int i = 0; i < lotto.length; i++) {
 			lotto[i] = (int) (Math.random() * 45 + 1);
 			for (int j = 0; j < i; j++) { // 중복 검증
@@ -72,9 +81,9 @@ public class Lotto {
 					i--;
 					break;
 				}
-			}
-			
+			}			
 		}
+		
 	}
 
 	private String showMenu() {
