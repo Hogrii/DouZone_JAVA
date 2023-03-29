@@ -23,6 +23,10 @@ public class Lotto {
 					}
 				}
 			}
+			
+			for(int i=0; i<lotto.length; i++) { // 로또 번호 확인
+				System.out.print(lotto[i] + " ");
+			}			
 		}else if(selectNum.equals("2")) { // 프로그램 종료
 			
 		}else {
