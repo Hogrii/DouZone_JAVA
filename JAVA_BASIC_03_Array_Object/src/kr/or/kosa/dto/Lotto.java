@@ -67,6 +67,13 @@ public class Lotto {
 					break;
 				}
 			}
+			for (int j=0; j<i; j++) { // 연속된 수 방지
+				if(lotto[i] == lotto[j]+1 || lotto[i] == lotto[j]-1) {
+					i--;
+					break;
+				}
+			}
+			
 		}
 	}
 
