@@ -47,7 +47,7 @@ public class Lotto {
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
 			} else {
-
+// 7 15 21 26 33 43 
 			}
 		}
 	}
@@ -72,7 +72,8 @@ public class Lotto {
 			}
 			for(int j=0; j<findMax.length; j++) { // 이전 5회차 번호 제외
 				if(findMax[j] != 0) {
-					if(lotto[i]==findMax[j]) {
+					if(lotto[i]==j) {
+						System.out.println("findMax[" + j + "] : " + findMax[j]);
 						i--;
 						break;
 					}
