@@ -40,6 +40,9 @@ public class Lotto {
 				}
 				int[] findMax = findMaxNum();
 				int maxNum = maxNum(findMax);
+				int[] lotto = realNum(findMax, maxNum);
+				bubbleSort(lotto);
+				lottoNumPrint(lotto);
 			} else if (selectNum.equals("2")) { // 프로그램 종료
 				System.out.println("프로그램을 종료합니다.");
 				System.exit(0);
@@ -49,12 +52,50 @@ public class Lotto {
 		}
 	}
 	
+	private int[] realNum(int[] findMax, int maxNum) {
+		int[] lotto = new int[6];
+		lotto[0] = maxNum;
+		
+		for (int i = 1; i < lotto.length; i++) {
+			lotto[i] = (int) (Math.random() * 45 + 1);
+			for (int j = 0; j < i; j++) { // 중복 검증
+				if (lotto[j] == lotto[i]) {
+					i--;
+					break;
+				}
+			}
+			for (int j=0; j<i; j++) { // 연속된 수 방지
+				if(lotto[i] == lotto[j]+1 || lotto[i] == lotto[j]-1) {
+					i--;
+					break;
+				}
+			}
+			for(int j=0; j<findMax.length; j++) { // 이전 5회차 번호 제외
+				if(findMax[j] != 0) {
+					if(lotto[i]==findMax[j]) {
+						i--;
+						break;
+					}
+				}
+			}
+		}
+		return lotto;
+	}
+	
 	private int maxNum(int[] findMax) {
 		int maxNum = 0;
+		int sumNum = 0;
 		for(int i=0; i<findMax.length; i++) {
-			if(maxNum<findMax[i]) maxNum = i;
+			System.out.println(i + " : " + findMax[i] + "번 나옴");
 		}
-		System.out.println("제일 많이 나온 수 : " + maxNum + ", " + findMax[maxNum] + "번");
+		
+		for(int i=0; i<findMax.length; i++) {
+			if(sumNum<findMax[i]) {
+				maxNum = i;
+				sumNum = findMax[i];
+			}
+		}
+		System.out.println("제일 많이 나온 수 : " + maxNum + ", " + sumNum + "번");
 		return maxNum;
 	}
 	
@@ -106,7 +147,6 @@ public class Lotto {
 				}
 			}			
 		}
-		
 	}
 
 	private String showMenu() {
