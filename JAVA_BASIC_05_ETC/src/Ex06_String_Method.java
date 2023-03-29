@@ -62,6 +62,8 @@ public class Ex06_String_Method {
 		for(String s : nameArr) {
 			System.out.println(s);
 		}
+		// .split(".")은 먹히질 않는다 -> .이 regex의 문법(예약어)이기 때문
+		// .split("\\.")		
 		
 		// 정규표현식은 내일
 		
