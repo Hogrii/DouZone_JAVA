@@ -12,15 +12,23 @@ public class Lotto {
 	public void start() {
 		String selectNum = showMenu();
 		if(selectNum.equals("1")) { // 당첨 예상 번호 추출하기
-			
+			int[] lotto = new int[6];
+			int tmp;			
+			for(int i=0; i<lotto.length; i++) {
+				lotto[i] = (int)(Math.random()*45+1);
+				for(int j=0; j<i; j++) { // 중복 검증
+					if(lotto[j] == lotto[i]) {
+						i--;
+						break;
+					}
+				}
+			}
 		}else if(selectNum.equals("2")) { // 프로그램 종료
 			
 		}else {
 			
-		}
-	
+		}	
 	}
-	
 	
 	private String showMenu() {
 		System.out.println("***************************");
