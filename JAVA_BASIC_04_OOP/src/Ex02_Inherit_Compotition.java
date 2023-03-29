@@ -95,6 +95,26 @@ class Circle extends Shape {
 	}
 }
 
+/*
+삼각형 클래스를 만드세요
+삼각형은 3개의 점과 색상, 그리다 기능을 가지고 있다
+hint) Shape, Point 제공 받아서 설계도를 작성하세요
+hint) (x, y), (x,y), (x,y)
+default 삼각형을 만들 수 있고 3개의 좌표값을 받아서 그릴 수 있다
+ */
+
+class Triangle extends Shape{
+	Point[] points;
+	
+	Triangle() {
+		this(new Point[] {new Point(10,20), new Point(30,40), new Point(50,60)});
+	}
+	
+	Triangle(Point[] points) {
+		this.points = points;
+	}
+}
+ 
 public class Ex02_Inherit_Compotition {
 	public static void main(String[] args) {
 		Circle circle = new Circle();
@@ -110,6 +130,14 @@ public class Ex02_Inherit_Compotition {
 		Circle circle2 = new Circle(100, point);
 		 */
 		
-		Circle circle2 = new Circle(100, new Point(10, 20));
+		Circle circle2 = new Circle(100, new Point(10, 20)); // 많이 쓰인다.
+		System.out.println();
+		
+		Triangle triangle = new Triangle();
+		for(Point point : triangle.points) {
+			System.out.println("점 : (" + point.x + "," + point.y +")");
+		}		
+		System.out.println("색상 : " + triangle.color);
+		triangle.draw();
 	}
 }
