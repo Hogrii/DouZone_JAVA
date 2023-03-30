@@ -30,7 +30,7 @@ class Product {
 
 class KtTv extends Product {
 	KtTv() { // 부모의 생성자를 호출
-		super(5000);
+		super(500);
 	}
 	
 	@Override
@@ -61,8 +61,127 @@ class NoteBook extends Product {
 	}
 }
 
+class Mouse extends Product {
+	Mouse() {
+		super(50);
+	}
+	
+	@Override
+	public String toString() {
+		return "Mouse";
+	}
+}
+
+// 구매자
+class Buyer {
+	int money = 5000;
+	int bonuspoint;
+	
+	/*
+	// 구매기능
+	// 제품 3개를 구매할 수 있는 기능
+	// 내 잔액서 - 제품의 가격, 포인트 갱신 + 누적)
+	void kttvBuy(KtTv n) { // 함수의 파라미터로 제품의 객체를 받는다(가격, 포인트 정보)
+		if(this.money < n.price) {
+			System.out.println("고객님 잔액이 부족합니다" + this.money);
+			return; // 함수의 종료(강제)
+		}
+		// 실 구매행위
+		this.money -= n.price;
+		this.bonuspoint += n.bonuspoint;
+		// KtTv의 toString()을 재정의 했기 때문에 제품 이름이 나온다.
+		System.out.println("현재 잔액은 : " + this.money + "원 입니다");
+		System.out.println("구매한 물건은 : " + n.toString());
+	}
+	void audioBuy(Audio n) { // 함수의 파라미터로 제품의 객체를 받는다(가격, 포인트 정보)
+		if(this.money < n.price) {
+			System.out.println("고객님 잔액이 부족합니다" + this.money);
+			return; // 함수의 종료(강제)
+		}
+		// 실 구매행위
+		this.money -= n.price;
+		this.bonuspoint += n.bonuspoint;
+		System.out.println("현재 잔액은 : " + this.money + "원 입니다");
+		System.out.println("구매한 물건은 : " + n.toString());
+	}
+	void notebookBuy(NoteBook n) { // 함수의 파라미터로 제품의 객체를 받는다(가격, 포인트 정보)
+		if(this.money < n.price) {
+			System.out.println("고객님 잔액이 부족합니다 : " + this.money);
+			return; // 함수의 종료(강제)
+		}
+		// 실 구매행위
+		this.money -= n.price;
+		this.bonuspoint += n.bonuspoint;
+		System.out.println("현재 잔액은 : " + this.money + "원 입니다");
+		System.out.println("구매한 물건은 : " + n.toString());
+	}
+	*/
+	
+	/*
+	1. 오버로딩 .. >> 함수의 이름을 통일 시킨다.. >> 코드량 변화는 없음
+	2. 부모 타입의 변수는 자식 타입의 주소를 받을 수 있다 >> 다형성
+	 */
+	
+	void Buy(Product n) {
+		if(this.money < n.price) {
+			System.out.println("고객님 잔액이 부족합니다 : " + this.money);
+			return;
+		}
+		
+		this.money -= n.price;
+		this.bonuspoint += n.bonuspoint;
+		System.out.println("현재 잔액은 : " + this.money + "원 입니다");
+		System.out.println("구매한 물건은 : " + n.toString());
+	}
+}
+
+/*
+1차 오픈 ...
+팀장 >> 하와이로 휴가 ..
+
+매장에 제품을 더 구매 >> 1000개 추가(마우스, 토스트기, 청소기 ..) .. POS(자동 등록 : 제품)
+매장에 1000개의 제품 전시 ..
+업체는 전단지를 뿌렸다 >> 주말 오픈세일 ..
+
+문제 발생!
+1. 3개 제품만 구매 가능 >> 997 제품이 구매가 안된다
+ >> 욕을 먹고 하와이 PC방 >> 국내 전산망 >> 개발 서버 접속 >> 구매함수 997개 추가 ...
+
+ */
 public class Ex12_Inherit_KeyPoint {
 	public static void main(String[] args) {
+		// 가오픈 생각.. 
+		// 상품 진열
+		KtTv kt = new KtTv();
+		Audio audio = new Audio();
+		NoteBook notebook = new NoteBook();
+		Mouse mouse = new Mouse();
 		
+		// 구매자
+		Buyer buyer = new Buyer();
+		/*
+		buyer.kttvBuy(kt);
+		buyer.kttvBuy(kt);
+		buyer.kttvBuy(kt);
+		buyer.kttvBuy(kt);
+		buyer.kttvBuy(kt);
+		buyer.kttvBuy(kt);
+		buyer.audioBuy(audio);
+		buyer.audioBuy(audio);
+		buyer.notebookBuy(notebook);
+		buyer.notebookBuy(notebook);
+		*/
+		
+		buyer.Buy(kt);
+		buyer.Buy(kt);
+		buyer.Buy(kt);
+		buyer.Buy(kt);
+		buyer.Buy(kt);
+		buyer.Buy(kt);
+		buyer.Buy(audio);
+		buyer.Buy(audio);
+		buyer.Buy(notebook);
+		buyer.Buy(notebook);
+		buyer.Buy(mouse);
 	}
 }
