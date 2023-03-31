@@ -10,11 +10,13 @@ class Ssystem {
 class print {
 	void pprintln(byte x) { System.out.println(x);}
 	void pprintln(boolean x) { System.out.println(x);}
+	void pprintln(char x) { System.out.println(x);}
 	void pprintln(short x) { System.out.println(x);}
 	void pprintln(int x) { System.out.println(x);}
 	void pprintln(long x) { System.out.println(x);}
 	void pprintln(float x) { System.out.println(x);}
 	void pprintln(double x) { System.out.println(x);}
+	void pprintln(String x) { System.out.println(x);}
 }
 
 public class Ex14_Quiz {
