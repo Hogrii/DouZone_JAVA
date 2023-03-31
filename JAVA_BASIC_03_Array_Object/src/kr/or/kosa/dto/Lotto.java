@@ -102,8 +102,6 @@ public class Lotto {
 	
 	private int[] findMaxNum() {
 		int[] findMax = new int[46];
-		System.out.println("lottos 길이 : " + lottos.length);
-		System.out.println("lotto 길이 : " + lottos[0].lotto.length);
 		for(int i=0; i<lottos.length; i++) {
 			for(int j=0; j<lottos[i].lotto.length; j++) {
 				findMax[lottos[i].lotto[j]]++;
@@ -141,12 +139,6 @@ public class Lotto {
 					break;
 				}
 			}
-			for (int j=0; j<i; j++) { // 연속된 수 방지
-				if(lotto[i] == lotto[j]+1 || lotto[i] == lotto[j]-1) {
-					i--;
-					break;
-				}
-			}			
 		}
 	}
 
