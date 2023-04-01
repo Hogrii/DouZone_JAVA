@@ -30,6 +30,7 @@ class Child2 extends Pclass{
 	@Override
 	protected void m() {
 		super.m();
+		System.out.println("재정의했다");
 	}
 }
 
@@ -39,5 +40,7 @@ public class Ex08_Inherit_Protected {
 //		pclass.i public만 접근이 가능
 		
 		Child2 child = new Child2();
+		child.m();
+		child.method();
 	}
 }
