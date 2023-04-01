@@ -107,6 +107,7 @@ class Scv extends GroundUnit implements Irepairable {
 		if(repairunit instanceof Unit2) {
 			// Tank2, Scv
 			Unit2 unit2 = (Unit2)repairunit; // Irepairable repairunit >> 
+			// 인터페이스는 모든 클래스로 다운캐스팅 할 수있다 ?
 			if(unit2.hitPoint != unit2.MAX_HP) { // hitPoint는 맞았을때 줄어들고 남은 체력
 				unit2.hitPoint = unit2.MAX_HP; // 완충
 			}
@@ -117,7 +118,7 @@ class Scv extends GroundUnit implements Irepairable {
 	}
 }
 
-public class Ex04_Interface_Ploy {
+public class Ex04_Interface_Poly {
 	public static void main(String[] args) {
 		Tank2 tank = new Tank2();
 		Marine2 marine = new Marine2();
