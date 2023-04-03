@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 /*
 Collection Framework
 [다수의 데이터]를 다루는 [표준화된 인터페이스]를 구현하고 있는 [클래스 집합]
@@ -43,11 +45,62 @@ Array
 
 List 인터페이스를 구현하고 있는 ArrayList, Vector는
 1. 배열의 크기가 동적으로 확장 또는 축소가 가능하다 >> 진실은 컴파일러가 새로운 배열을 만들고 데이터를 이동..
-
+2. 순서를 유지(내부적으로 Array 사용), 중복값 허용
+3. 중복값 허용(index를 통해서 제어)
 
  */
 public class Ex01_Vector {
 	public static void main(String[] args) {
+		Vector v = new Vector();
+		System.out.println("초기 용량 : " + v.capacity()); // 정적 벡터의 크기
+														// Object[] obj = new Object[10]
+		System.out.println("값의 크기(개수) : " + v.size());
 		
+		v.add("AA"); // 순서 [0]
+		v.add("BB"); // 순서 [1]
+		v.add("CC"); // 순서 [2]
+		v.add(10);
+		System.out.println("size : " + v.size());
+		System.out.println(v.toString()); // [AA, BB, CC, 10] >> 배열값을 찍도록 Override 했다
+
+		// 배열의 개수
+		// Array >> length() -> 방의 개수		// Car[0]
+		// Collection >> size() -> 값의 개수	// get(0)
+		
+		for(int i=0; i<v.size(); i++) {
+			System.out.print(v.get(i) + " "); // get(index) -> 배열 값이 리턴
+		}
+		System.out.println();
+		
+		// 개선된 for문
+		for(Object value : v) {
+			System.out.print(value + " ");
+		}
+		System.out.println();
+		
+		// 단점 : 작은 데이터(같은 타입의 데이터) >> 가장 큰 타입을 사용해 얻는게 불합리하다
+		// 제너릭 >> 타입을 강제 >> Point
+		Vector<String> v2 = new Vector<String>();
+//		v2.add(10); // The method add(int, String) in the type Vector<String> is not applicable for the arguments (int)
+		v2.add("hello"); // add(String e)로 타입을 강제할 수 있다
+		v2.add("world");
+		for(String str : v2) {
+			System.out.println(str);
+		}
+		
+		Vector v3 = new Vector<>();
+		System.out.println(v3.capacity()); // 10
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		v3.add("A");
+		System.out.println(v3.capacity()); // 20 >> *2로 새로 만든 후 이사시킨 것
 	}
 }
