@@ -102,5 +102,8 @@ public class Ex01_Vector {
 		v3.add("A");
 		v3.add("A");
 		System.out.println(v3.capacity()); // 20 >> *2로 새로 만든 후 이사시킨 것
+		
+		// 편하게 동적으로 늘어나고 줄어든다고 생각
+		// ** 면접때는 새로운 배열을 만들고 이사시키는 것이라고 이야기 해야한다..
 	}
 }
