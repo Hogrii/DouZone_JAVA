@@ -23,7 +23,7 @@ public class Account {
 		String transactionTime = now.format(timeTrans);
 		System.out.println(amount + "원 입금하셨습니다.");
 		
-		this.transactions.add(new Transaction(amount, "deposit", transactionDate, transactionTime, this.balance));			
+		this.transactions.add(new Transaction(amount, "deposit", transactionDate, transactionTime, this.balance));
 		this.balance += amount;
 		System.out.println("현재 잔액은 " + balance + "원 입니다.");
 	}
