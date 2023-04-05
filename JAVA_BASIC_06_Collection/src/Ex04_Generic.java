@@ -55,6 +55,7 @@ public class Ex04_Generic {
 		list.add(new Person());
 		
 		// 개선된 for문을 사용해서 Person 객체는 age 출력 나머지는 값을 출력
+		// generic을 사용하지 않았을 때의 불편함
 		for(Object obj : list) {
 			if(obj instanceof Person) {
 				Person p = (Person)obj;
@@ -65,6 +66,7 @@ public class Ex04_Generic {
 		}
 		System.out.println();
 		
+		// generic 사용시
 		List<Person> plist = new ArrayList<>();
 		plist.add(new Person());
 		plist.add(new Person());
