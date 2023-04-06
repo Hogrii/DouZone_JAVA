@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.ListIterator;
 
 /*
@@ -74,11 +75,20 @@ public class Ex08_Collection_Iterator {
 		}
 		
 		// 참고
-		while(it3.hasNext()) {
-			int i = it3.next();
-			if(i==3) {
-				it3.remove();
+		List<Integer> numbers = new ArrayList<>();
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		numbers.add(4);
+		System.out.println(numbers);
+		
+		Iterator<Integer> itr = numbers.iterator();
+		while(itr.hasNext()) {
+			int num = itr.next();
+			if(num%2 == 0) {
+				itr.remove();
 			}
 		}
+		System.out.println(numbers);
 	}
 }
