@@ -4,7 +4,7 @@ import kr.or.kosa.Account;
 import kr.or.kosa.Bank;
 import kr.or.kosa.Transaction;
 
-public class GroupQuiz {
+public class GroupQuiz_Bank {
 	public static void main(String[] args) {
 		Bank bank = new Bank();
 				
