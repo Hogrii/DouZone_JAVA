@@ -5,7 +5,7 @@ import java.util.List;
 class Board { // 질문 필수,,
 	List<Comment> comments;
 	
-	public void addComment(Comment comment) {
+	public void addComment(Comment comment) { // 댓글 추가, 집합 연관(aggregation)
 		this.comments.add(comment);
 	}
 }
