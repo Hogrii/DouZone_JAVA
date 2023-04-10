@@ -22,7 +22,7 @@ public class Ex04_Stream_Buffer {
 		BufferedOutputStream bos = null;
 		
 		try {
-			fos = new FileOutputStream("data.txt"); // 파일이 업스면 파일을 만든다(create)
+			fos = new FileOutputStream("data.txt"); // 파일이 없으면 파일을 만든다(create)
 			bos = new BufferedOutputStream(fos); // Buffer 탄생
 			
 			for(int i=0; i<10; i++) {
