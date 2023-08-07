@@ -21,6 +21,19 @@ class Task_1 extends Thread {
 		System.out.println("Task_1 run() 함수 END");
 	}
 }
+
+class Task_2 implements Runnable { 
+	// Runnable 인터페이스를 구현한 함수는 Thread가 아니다
+	// run()을 구현한 클래스일 뿐이다
+	@Override
+	public void run() {
+		for(int i=0; i<10000; i++) {
+			System.out.println("Task_2 " + i);
+		}
+		System.out.println("Task_2 run() 함수 END");
+	}	
+}
+
 public class Ex02_Multi_Thread {
 	public static void main(String[] args) {
 		// main Thread
@@ -28,6 +41,10 @@ public class Ex02_Multi_Thread {
 		Task_1 th = new Task_1();
 		th.start(); // start 함수는 Thread를 하나 더 생성하고 자신이 갖고 있는 함수(run 함수)를 해당 Thread에 올려준다
 					// POINT : memory에 call stack을 생성하고 Thread가 가지는 run() 함수를 stack에 올려 놓는다
+		
+		Task_2 ta = new Task_2(); // Runnable 인터페이스를 구현한 객체일 뿐이다
+		Thread th2 = new Thread(ta); 
+		th2.start();
 		
 		for(int i=0; i<10000; i++) {
 			System.out.println("main " + i);
