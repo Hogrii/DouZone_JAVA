@@ -46,9 +46,23 @@ public class Ex02_Multi_Thread {
 		Thread th2 = new Thread(ta); 
 		th2.start();
 		
+		// 익명 객체 활용
+		Thread th3 = new Thread(new Runnable() {			
+			@Override
+			public void run() {
+				for(int i=0; i<10000; i++) {
+					System.out.println("Task_3 " + i);
+				}
+				System.out.println("Task_3 run() 함수 END");
+			}
+		});
+		th3.start();
+		
 		for(int i=0; i<10000; i++) {
 			System.out.println("main " + i);
 		}
 		System.out.println("main END");
+		
+
 	}
 }
