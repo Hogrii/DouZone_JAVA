@@ -49,5 +49,20 @@ public class Ex04_Multi_Word_Game {
 
 		Word wordThread = new Word();
 		wordThread.start();
+		
+		// 상태(일시정지) >> 실행되고 있는 Thread를 휴게실로 보내기
+		
+		// 위성과 지구와의 거리
+		// 목성(Thread), 토성(Thread), 금성(Thread) >> 총 거리의 합 >> main Thread 3개의 종료후에 ..
+		
+		// main thread는 word, time이 끝난 다음에 종료하고 싶어요
+		try {
+			timerThread.join(); // main에게 내가 끝날때까지 기다려!
+			wordThread.join(); // main에게 내가 끝날때까지 기다려!
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		System.out.println("MAIN END"); // 항상 내가 다른 Thread 끝난 다음에 처리할게!
+		// 여기서 최종값을 확이인하거나 처리한다
 	}
 }
