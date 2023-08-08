@@ -47,7 +47,7 @@ public class Ex02_Multi_Thread {
 		th2.start();
 		
 		// 익명 객체 활용
-		Thread th3 = new Thread(new Runnable() {			
+		Thread th3 = new Thread(new Runnable() { // 1회성 사용			
 			@Override
 			public void run() {
 				for(int i=0; i<10000; i++) {
