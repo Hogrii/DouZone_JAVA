@@ -29,6 +29,7 @@ public class Ex02_TCP_Server {
 		
 		System.out.println("서버를 종료하겠츄!");
 		
+		// 자원 해제
 		dos.close();
 		out.close();
 		socket.close();
