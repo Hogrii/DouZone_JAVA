@@ -20,7 +20,7 @@ public class Ex01_URLConnection {
 		URL url = new URL(urlStr); // 연결(인터넷상 주소)
 		BufferedInputStream bis = new BufferedInputStream(url.openStream());
 		
-		URLConnection uc = url.openConnec tion();
+		URLConnection uc = url.openConnection();
 		
 		// URLConnection 연결된 주소에서 원하는 정보 추출하기
 		int filesize = uc.getContentLength();
