@@ -25,7 +25,7 @@ public class Ex02_TCP_Server {
 		
 		OutputStream out = socket.getOutputStream();
 		DataOutputStream dos =new DataOutputStream(out);
-		dos.writeUTF("우나은바라기의 pc 입니다 !!");
+		dos.writeUTF("진호의 PC !!");
 		
 		System.out.println("서버를 종료하겠츄!");
 		
