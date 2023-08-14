@@ -46,7 +46,7 @@ public class Ex05_TCP_Chatt_Client extends JFrame implements ActionListener, Run
 		
 		// socket 생성, 설정
 		try {
-			Socket socket = new Socket("192.168.0.46", 9999);
+			Socket socket = new Socket("192.168.0.164", 9999);
 			in = new DataInputStream(socket.getInputStream());
 			out = new DataOutputStream(socket.getOutputStream());
 			
