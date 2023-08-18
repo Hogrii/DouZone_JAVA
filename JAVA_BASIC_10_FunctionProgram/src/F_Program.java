@@ -84,9 +84,8 @@ public class F_Program {
 		// java .. stream API 제공(표현 람다식으로)
 		int result2 = 0;
 		result2 = list.stream()
-					.filter(n -> n%2==0)
-					.mapToInt(Integer :: intValue)
-					.sum();
-		
+					.filter(n -> n%2==0) // filter로 걸러내기 -> stream을 return
+					.mapToInt(Integer :: intValue) // stream에서 Int 타입으로 하나씩 꺼내기
+					.sum(); // 꺼낸 값을 모두 합치기
 	}
 }
