@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 enum Gender {
 	Male, Female
 }
@@ -161,3 +161,4 @@ public class F_Program4 {
 		service.addCustomer(new Customer("customer10", "Seoul",   Gender.Male, 20));
 	}
 }
+ */
